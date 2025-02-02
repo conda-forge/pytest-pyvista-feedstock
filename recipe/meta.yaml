@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/p/pytest_pyvista/pytest_pyvista-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/p/pytest_pyvista/pytest_pyvista-{{ version }}.tar.gz
   sha256: 6ef567f075d9be54f7adfa3de3f5ba98d475db47d8e878b9f1d249d19c27a7b6
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
     - flit >=3.2,<4
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - pytest >=3.5.0
     - pyvista
 
@@ -31,6 +31,7 @@ test:
     - pip check  # [not win]
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/pyvista/pytest-pyvista
