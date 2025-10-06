@@ -1,5 +1,5 @@
 {% set name = "pytest-pyvista" %}
-{% set version = "0.2.0" %}
+{% set version = "0.3.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/p/pytest_pyvista/pytest_pyvista-{{ version }}.tar.gz
-  sha256: b7e1400e3e481d9a2be46b6c10efb403d225d9877b0431e2de49ea063bba0bd8
+  sha256: ad581b11d6bd6481106b0207ecd1cf392c7f0b3218c4be010f9bc8120cf80ca9
 
 build:
   noarch: python
